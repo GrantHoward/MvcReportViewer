@@ -655,7 +655,7 @@ if (formElement{0}) {{
         /// </summary>
         /// <param name="dataSource">IEnumberable of KeyValuePair[string dataSourceName, T dataSource]</param>
         /// <returns></returns>
-        public IMvcReportViewerOptions LocalDataSources<T>(IEnumerable<KeyValuePair<string, T>> dataSources)
+        public IMvcReportViewerOptions LocalDataSources<T>(Dictionary<string, T> dataSources)
         {
             var provider = LocalReportDataSourceProviderFactory.Current.Create();
 

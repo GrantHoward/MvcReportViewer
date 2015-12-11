@@ -99,7 +99,7 @@ namespace MvcReportViewer
         /// </summary>
         /// <param name="dataSources">An enumerable of datasources</param>
         /// <returns></returns>
-        IMvcReportViewerOptions LocalDataSources<T>(IEnumerable<KeyValuePair<string, T>> dataSources);
+        IMvcReportViewerOptions LocalDataSources<T>(Dictionary<string, T> dataSources);
 
         /// <summary>
         /// Sets the type implementing IReportViewerEventsHandler interface. The instance of the type is responsible for
