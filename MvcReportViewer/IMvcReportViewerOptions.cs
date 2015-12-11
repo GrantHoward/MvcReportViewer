@@ -95,6 +95,13 @@ namespace MvcReportViewer
         IMvcReportViewerOptions LocalDataSource<T>(string dataSourceName, T dataSource);
 
         /// <summary>
+        /// Registers custom local data sources, e.g. SQL query
+        /// </summary>
+        /// <param name="dataSources">An enumerable of datasources</param>
+        /// <returns></returns>
+        IMvcReportViewerOptions LocalDataSources<T>(IEnumerable<KeyValuePair<string, T>> dataSources);
+
+        /// <summary>
         /// Sets the type implementing IReportViewerEventsHandler interface. The instance of the type is responsible for
         /// processing Report Viewer Web Control's events, e.g. SubreportProcessing.
         /// </summary>

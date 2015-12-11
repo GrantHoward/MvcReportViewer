@@ -651,6 +651,23 @@ if (formElement{0}) {{
         }
 
         /// <summary>
+        /// Registers custom local data sources, e.g. SQL query
+        /// </summary>
+        /// <param name="dataSource">IEnumberable of KeyValuePair[string dataSourceName, T dataSource]</param>
+        /// <returns></returns>
+        public IMvcReportViewerOptions LocalDataSources<T>(IEnumerable<KeyValuePair<string, T>> dataSources)
+        {
+            var provider = LocalReportDataSourceProviderFactory.Current.Create();
+
+            foreach (var keyValuePair in dataSources)
+            {
+                provider.Add(ControlId, keyValuePair.Key, keyValuePair.Value);
+            }
+
+            return this;
+        }
+
+        /// <summary>
         /// Sets the type implementing IReportViewerEventsHandler interface. The instance of the type is responsible for
         /// processing Report Viewer Web Control's events, e.g. SubreportProcessing.
         /// </summary>
